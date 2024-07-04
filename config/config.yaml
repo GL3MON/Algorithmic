@@ -1,0 +1,18 @@
+artifacts_root: artifacts
+
+langchain_config:
+  set_debug: True
+  set_verbose: True
+  recursion_limit: 50
+
+terminal_config:
+  input_file: artifacts/IO/input.txt
+  test_cases_file: artifacts/IO/test_cases.txt
+  llm_code_file: artifacts/IO/llm_code.py
+  terminal_output_file: artifacts/IO/output.json
+
+llm_config:
+  model: gemini-1.5-pro
+  convert_system_message_to_human: True
+  handle_parsing_errors: True
+  max_tokens: 1000
