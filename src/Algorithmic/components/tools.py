@@ -35,8 +35,6 @@ class SandboxCodeExecutor:
                 )
                 result = container.wait(timeout=10)
                 terminal_output = container.logs().decode('utf-8')
-                print(type(result))
-                print(type(terminal_output))
                 container.remove()
                 
                 terminal_out_json_fp = open(self.config.terminal_output_file, 'w', encoding='utf-8')
