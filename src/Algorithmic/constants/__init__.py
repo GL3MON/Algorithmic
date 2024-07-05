@@ -1,5 +1,6 @@
-from cmd import PROMPT
 from pathlib import Path
+
+GOOGLE_API_KEY = "AIzaSyBO5I5F5VDjPxcTNTWD8SY0oH3X7eeDxbw"
 
 CONFIG_PATH = Path("config/config.yaml")
 
@@ -35,7 +36,6 @@ class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
         
 ```
-
 
 Question Analysis:
 {question_analysis}
