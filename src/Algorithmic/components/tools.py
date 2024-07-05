@@ -1,4 +1,3 @@
-from Algorithmic.logging import logger
 from Algorithmic.constants import PYTHON_CODE_EXECUTION_COMMAND
 from Algorithmic.entity import TerminalConfig
 import json

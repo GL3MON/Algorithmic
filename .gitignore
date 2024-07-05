@@ -1,1 +1,5 @@
 Research/
+.vscode
+__pycache__
+Algorithmic.egg-info
+logs
