@@ -6,10 +6,9 @@ langchain_config:
   recursion_limit: 50
 
 terminal_config:
-  input_file: artifacts/IO/input.txt
-  test_cases_file: artifacts/IO/test_cases.txt
-  llm_code_file: artifacts/IO/llm_code.py
-  terminal_output_file: artifacts/IO/output.json
+  root_dir: artifacts/terminal
+  python_image: python:3.9-slim
+  terminal_output_file: artifacts/terminal/output.json
 
 llm_config:
   model: gemini-1.5-pro

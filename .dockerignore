@@ -1,0 +1,7 @@
+.github
+.vscode
+Research
+Algorithmic.egg-info
+.gitignore
+template.py
+logs
