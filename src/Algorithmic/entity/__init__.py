@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
+from typing_extensions import TypedDict
 
 @dataclass(frozen=True)
 class LangchainConfig:
@@ -18,3 +19,16 @@ class LLMConfig:
     convert_system_message_to_human: True
     handle_parsing_errors: True
     max_tokens: 1000
+
+class GraphState(TypedDict):
+    question: str
+    logic_code: str
+    final_code: str
+    error_check_count: int
+    terminal_output: str
+    required_output: str
+    regenerate_count: int
+    question_analysis: str
+    math_analysis: str
+    test_cases: str
+    error: str

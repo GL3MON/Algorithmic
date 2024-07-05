@@ -7,7 +7,7 @@ langchain_config:
 
 terminal_config:
   root_dir: artifacts/terminal
-  python_image: python:3.9-slim
+  python_image: python:3.11-slim
   terminal_output_file: artifacts/terminal/output.json
 
 llm_config:

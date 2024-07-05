@@ -22,6 +22,7 @@ questions effectively. You use Mathematical concepts like Set Thoery, Graphs, Al
 to create a summary stating the mathematics that could be used to solve the question. Just explain the maths important to the question. If thr question
 doesn't require any mathematical detail, just say not required. Try representing the approach mathematically.
 
+
 Question: {question}
 '''
 
@@ -30,6 +31,8 @@ You are competiting in an International Competitve Programming Competition with 
 analysis and a mathematical analysis. You have to code the answer in python using all the given context. Don't include any explanation.
 Return the python code and the function name to call to test the inputs in a JSON file with titles 'code' and 'function' respectively. Make sure the answering
 format is in json containting the above mentioned keys. Don't inlclude the class name with the function name.
+DISALLOWED_PATTERNS = [r'import\s+os', r'import\s+sys', r'__import__', r'eval', r'exec']
+
 The code template is:
 ```
 class Solution:
@@ -52,6 +55,8 @@ answers(python program) to handle the testcases given. You get the reference of 
 with the given main program. You'll be given the user answer. You have to make it into a whole python script that handles all the IO. Make sure you handle
 all the test cases provided. The code must handle the entire input and verify all the provieded cases to evaluate the code.Return the answer in JSON format
 with a single key 'code' with the python code in it. The input contains multiple test cases, you have to make sure the code runs all those test cases.
+DISALLOWED_PATTERNS = [r'import\s+os', r'import\s+sys', r'__import__', r'eval', r'exec']
+
 
 Main User Code:
 ```
@@ -73,6 +78,8 @@ ERROR_HANDLER_PROMPT = '''You are an experienced programmer. You have a lot of e
 during execution. You have to anaylse the code and fix the error that arised. You are also given the input that is given to the python code. You must fix
 the faulty code to run all the inputs and not evade them using try block.Return the fixed code and the explanation in a JSON format with keys 'code' and
 'explanation' respectively.
+DISALLOWED_PATTERNS = [r'import\s+os', r'import\s+sys', r'__import__', r'eval', r'exec']
+
 
 Faulty code:
 {final_code}

@@ -12,9 +12,14 @@ from Algorithmic.constants import (
 class Agents:
     
     def __init__(self):
-        self.question_analyser, self.math_analyser, self.python_generator, self.io_handler, self.error_handler, self.output_analyser = None
+        self.question_analyser = None
+        self.math_analyser = None
+        self.python_generator = None
+        self.io_handler = None
+        self.error_handler = None
+        self.output_analyser = None
     
-    def get_problem_analyser(self, llm):
+    def get_question_analyser(self, llm):
         prompt = PromptTemplate(
             template=PROBLEM_ANALYSER_PROMPT,
             input_variables=["question"],
