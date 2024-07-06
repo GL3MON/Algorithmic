@@ -34,10 +34,10 @@ class Graph:
         self.python_generator = self.agents.get_python_generator(self.coder)
         
         logger.info("INITIATING IO HANDLER")
-        self.io_handler = self.agents.get_io_handler(self.coder)
+        self.io_handler = self.agents.get_io_handler(self.global_llm)
         
         logger.info("INITIATING ERROR HANDLER")
-        self.error_handler = self.agents.get_error_handler(self.global_llm)
+        self.error_handler = self.agents.get_error_handler(self.coder)
         
         logger.info("INITIATING OUTPUT ANALYSER")
         self.output_analyser = self.agents.get_output_analyser(self.global_llm)
@@ -118,6 +118,9 @@ class Graph:
     def output_analysis(self, state):
         logger.info("ANALYSING OUTPUT")
         terminal_output = state['terminal_output']
+        question_analysis = state['question_analysis']
+        math_analysis = state['math_analysis']
+        error = state['error']
         final_code = state['final_code']
         logic_code = state['logic_code']
         required_output = state['required_output']
@@ -130,7 +133,7 @@ class Graph:
             regenerate_count += 1
         else:
             regenerate_count = 0
-        return {"regenerate_count": regenerate_count, "final_code": final_code, "logic_code": logic_code}
+        return {"regenerate_count": regenerate_count, "final_code": final_code, "logic_code": logic_code, "error": error, "terminal_output": terminal_output, "question_analysis": question_analysis, "math_analysis": math_analysis}
     
     def decide_to_regenerate(self, state):
         regenerate_count = state['regenerate_count']

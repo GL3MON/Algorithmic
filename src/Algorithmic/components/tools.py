@@ -1,5 +1,6 @@
 from Algorithmic.constants import PYTHON_CODE_EXECUTION_COMMAND
 from Algorithmic.entity import TerminalConfig
+from Algorithmic.logging import logger
 import json
 import tempfile
 import docker
@@ -27,7 +28,7 @@ class SandboxCodeExecutor:
                 container = self.client.containers.run(
                     self.config.python_image,
                     PYTHON_CODE_EXECUTION_COMMAND,
-                    volumes = {temp_dir: {'bind': '/mnt', 'mode': 'rw'}},
+                    volumes = {temp_dir: {'bind': '/mnt', 'mode': 'rw', 'permissions': 'rw-rw-rw'}},
                     detach = True,
                     stderr =  True,
                     stdout = True,
@@ -43,6 +44,8 @@ class SandboxCodeExecutor:
                 }
 
                 json.dump(terminal_output, terminal_out_json_fp, ensure_ascii=False, indent=4)
+                
+                logger.info(terminal_output)
                 
                 return terminal_output
                 

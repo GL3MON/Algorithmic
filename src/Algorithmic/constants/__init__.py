@@ -4,7 +4,7 @@ GOOGLE_API_KEY = "AIzaSyBO5I5F5VDjPxcTNTWD8SY0oH3X7eeDxbw"
 
 CONFIG_PATH = Path("config/config.yaml")
 
-PYTHON_CODE_EXECUTION_COMMAND = 'bash -c "python /mnt/llm_code.py < /mnt/test_cases.txt"'
+PYTHON_CODE_EXECUTION_COMMAND = f'bash -c "python /mnt/llm_code.py < /mnt/test_cases.txt"'
 
 PROBLEM_ANALYSER_PROMPT = '''You are an excellent python programmer, You are well versed in Competitive programming, You have 2300+ score in your Competitve Programming Platform.
 You are competiting in an International Competitve Programming Competition with your dream team. Your have an amazing ability to breakdown the CP question

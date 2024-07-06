@@ -1,8 +1,8 @@
 artifacts_root: artifacts
 
 langchain_config:
-  set_debug: True
-  set_verbose: True
+  set_debug: False
+  set_verbose: False
   recursion_limit: 50
 
 terminal_config:
