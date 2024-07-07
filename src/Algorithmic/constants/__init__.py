@@ -1,7 +1,5 @@
 from pathlib import Path
 
-GOOGLE_API_KEY = "AIzaSyBO5I5F5VDjPxcTNTWD8SY0oH3X7eeDxbw"
-
 CONFIG_PATH = Path("config/config.yaml")
 
 PYTHON_CODE_EXECUTION_COMMAND = f'bash -c "python /mnt/llm_code.py < /mnt/test_cases.txt"'
